@@ -12,11 +12,12 @@ services:
     restart: always
     environment:
       # database url to connect
-      HASURA_GRAPHQL_DATABASE_URL: postgres://postgres:@postgres:5432/postgres
+      HASURA_GRAPHQL_DATABASE_URL: postgres://hasura@griffondev-pg-server:Kznwildlaw@1:griffondev-pg-server.postgres.database.azure.com
       # enable the console served by server
       HASURA_GRAPHQL_ENABLE_CONSOLE: "true" # set "false" to disable console
       ## uncomment next line to set an admin secret key
-      # HASURA_GRAPHQL_ADMIN_SECRET: myadminsecretkey
+      HASURA_GRAPHQL_ADMIN_SECRET: Kznwildlaw@1
+      HASURA_GRAPHQL_JWT_SECRET: '{"type": "RS512", "key": "-----BEGIN CERTIFICATE-----\nMIIDATCCAemgAwIBAgIJCYyb/ElpBtWtMA0GCSqGSIb3DQEBCwUAMB4xHDAaBgNV\nBAMTE3BwZmNucy5ldS5hdXRoMC5jb20wHhcNMTgwODIxMDcxOTU1WhcNMzIwNDI5\nMDcxOTU1WjAeMRwwGgYDVQQDExNwcGZjbnMuZXUuYXV0aDAuY29tMIIBIjANBgkq\nhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAv5+pClrlyHGTsFO1v/b9jYNKSK6vJ0vB\nmJp8FKo9L9XHOQJgr4xjMN8+afIF3qjhh/CRIFf9XTsMmYb0WeCfEN/WA5/+W/e5\nEVD/HM20nOjXFtm/5IpokrCwNyQE0PZtSqf0pvbq34brXqUzWK5Sw81G/bSXx1mm\nPCEFdG2P0OaZqsbAn5A6zKOthmZqE0MQ4+bVatIXW+RpZ/uZEClAWFzCw8FFyn3K\nJ4r5HgScSv6tg4F038x7T15lRA5hKNyBblL4AgwPhUxlHaIyPQPwNuATSBWZZebf\nsI1QMFXn+NzmENlzc1/cjWqWaCsZpBuHoTLXPEO295Wd+F3eePcxnwIDAQABo0Iw\nQDAPBgNVHRMBAf8EBTADAQH/MB0GA1UdDgQWBBQCF1I0S2LWJ9QW/+uCtuqIWTH9\nbjAOBgNVHQ8BAf8EBAMCAoQwDQYJKoZIhvcNAQELBQADggEBAHEQgHE8d9zKhj0Y\nCjQ2XBhypzZi+P2fjuyL4ma/m7wfFJgvh+f/C/vcw5TDlRgiV/cTbOcj3IkbiH1z\nuj4KHJzo+80vEmh4cZjJHihJIz3fXHHB1mTfYt23+q0IIY4zKIOnLkbsbMJCx+2n\nVAl3vmTwSo5JkVQ+pyVv3nR3o56pSroa9AJAD08ToADbL/+6Vn+1I6DjpGoyTkPZ\n0gd3c0k59wGFKd0lmpzLke6U4uEY3qafD/HQok+kzWuseLwPw4zjLVV6YDC4B6Yb\niSSJhL0GIX7MYqPuj1QH1Pup318XDX5wqYgowH3flXTH6lsO7fUeFgfXTPT4DOhT\nGtYuIQw=\n-----END CERTIFICATE-----\n"}'
     command:
     - graphql-engine 
     - serve
